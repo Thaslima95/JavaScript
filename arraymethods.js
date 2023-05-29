@@ -102,11 +102,43 @@ main();
 // main();
 
 //map method
+// var arr = [2, 5, 6, 3, 8, 9];
 
-var arr = [2, 5, 6, 3, 8, 9];
+// const arrPlus10 = arr.map((val, index) => val + 10);//arrow function
+// //map returns new array
 
-const arrPlus10 = arr.map((val, index) => val + 10);//arrow function
+// console.log(arrPlus10);//it doesn't modify original array
 
-console.log(arrPlus10);
+// console.log(`original array ${arr}`)
 
-console.log(`original array ${arr}`)
+
+
+// //filter method
+// const transaction = ["+100", "-20", "-30", "+100", "+400"];
+
+// const updateTransanction = transaction.filter((ele) => {
+//   if (ele[0] === "+") return true;
+//   else return false;
+// });
+// console.log(updateTransanction);//filtered only credit transaction
+
+
+//Greater than 7
+// var numbers = [1, 3, 6, 8, 11];
+
+// var greaterThanSeven = numbers.filter(function (number) {
+//   return number > 7;
+// });
+
+// console.log(greaterThanSeven)
+
+//based on search
+ const names = ["Johny", "Daniel", "Mike", "Sam", "Carol", "Bebeffin"];
+console.log("The names are=");
+console.log(names);
+var nameObject = names.filter(
+  (allNameObject) => !["Daniel", "Mike", "Sam", "Carol"].includes(allNameObject)
+);
+console.log("After filter=");
+console.log(nameObject);
+
