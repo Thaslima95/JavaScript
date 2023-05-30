@@ -133,12 +133,68 @@ main();
 // console.log(greaterThanSeven)
 
 //based on search
- const names = ["Johny", "Daniel", "Mike", "Sam", "Carol", "Bebeffin"];
-console.log("The names are=");
-console.log(names);
-var nameObject = names.filter(
-  (allNameObject) => !["Daniel", "Mike", "Sam", "Carol"].includes(allNameObject)
-);
-console.log("After filter=");
-console.log(nameObject);
+//  const names = ["Johny", "Daniel", "Mike", "Sam", "Carol", "Bebeffin"];
+// console.log("The names are=");
+// console.log(names);
+// var nameObject = names.filter(
+//   (allNameObject) => !["Daniel", "Mike", "Sam", "Carol"].includes(allNameObject)
+// );
+// console.log("After filter=");
+// console.log(nameObject);
 
+
+//find Method
+
+var array = [10, 20, 30, 40, 50];
+
+// var found = array.find(function (element) {
+//   return element > 20; //return first value that satisfies the condition
+// });
+
+// console.log(found)
+
+//if element not found in array it rerurns false.
+
+// var found=array.find((e=>e>80))
+
+// console.log(found)
+
+
+//find method to get first even number
+
+// let numbers = [1, 3, 4, 2, 9, 8];
+
+// // // function to check even number
+// function isEven(element) {
+//   return element % 2 === 0;
+// }
+
+// // // get the first even number
+// let evenNumber = numbers.find(isEven);
+// console.log(evenNumber);
+
+
+//reduce= sum of total numbers ,product of numbers
+
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// let sum = arr.reduce((prev, curr) => prev + curr, 1); //initial value 1
+
+// let product = arr.reduce((prev, curr) => prev * curr);
+// //not provided initial value first element of an array taken as initial value
+
+// console.log(`sum of numbers ${sum}`); //sum of numbers
+
+// console.log(`product of numbers ${product}`); //product of numbers
+
+//Array method chaining
+//Sum of square of odd numbers
+
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+let oddsqauretotal=arr.filter((e)=>e%2!==0).map((e)=>e*e).reduce((prev,curr)=>prev+curr);
+//first filter the odd numbers 
+//then squared using map 
+//then find the sum of squares using reduce
+
+console.log(`Sum of sqaures of odd numbers ${oddsqauretotal}`);
