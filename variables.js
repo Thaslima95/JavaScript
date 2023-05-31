@@ -36,6 +36,7 @@
 const x = 2;
 function constScope() {
   x = 3; // x is read only
+  //it will throw error TypeError
   if (true) {
     const x = 4;
     console.log(x + " inside if block ");

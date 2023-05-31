@@ -190,11 +190,305 @@ var array = [10, 20, 30, 40, 50];
 //Array method chaining
 //Sum of square of odd numbers
 
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-let oddsqauretotal=arr.filter((e)=>e%2!==0).map((e)=>e*e).reduce((prev,curr)=>prev+curr);
-//first filter the odd numbers 
-//then squared using map 
-//then find the sum of squares using reduce
+// let oddsqauretotal=arr.filter((e)=>e%2!==0).map((e)=>e*e).reduce((prev,curr)=>prev+curr);
+// //first filter the odd numbers 
+// //then squared using map 
+// //then find the sum of squares using reduce
 
-console.log(`Sum of sqaures of odd numbers ${oddsqauretotal}`);
+// console.log(`Sum of sqaures of odd numbers ${oddsqauretotal}`);
+
+
+//spread operator
+
+// const arrValue = ['My', 'name', 'is', 'Thaslima'];
+
+// console.log(arrValue);   // ["My", "name", "is", "Thaslima"]
+// console.log(...arrValue); // My name is Thaslima
+
+
+
+//copying array normally
+
+// const arrayOne=[1,2,3,4]
+// const arrayTwo=[5,6,7,8]
+// const arrayThree=[arrayOne,arrayTwo];
+
+// console.log(arrayThree)
+
+//copy array using spread operator
+// const arrayOne=[1,2,3,4]
+// const arrayTwo=[5,6,7,8]
+// const arrayThree=[...arrayOne,...arrayTwo]
+
+// console.log(arrayThree)
+
+//clone array
+
+// let arr1=[1,2,3];
+// let arr2=arr1;
+
+// console.log(arr1);
+// console.log(arr2);
+
+//append an element to the array
+// arr1.push(4);
+
+// console.log(arr1);//[1,2,3,4]
+// console.log(arr2);//[1,2,3,4]
+
+//we have pushed 4 to arr1 but it was reflected in arr2 as well bcase reference to both array is same.
+
+//clone array using spread operator
+// let arr1=[1,2,3];
+
+// let arr3=[...arr1]
+// arr3.push(5)
+
+// console.log("Using Spread Operator")
+
+// console.log(arr1);
+// console.log(arr3)
+
+
+//Math with spread operator
+
+//using math in list
+// console.log(Math.min(1,2,3,-1))//prints -1
+
+// let arrnum=[1,2,3,-1];
+
+// console.log(Math.min(arrnum))//getting output as NaN
+
+
+// //using spread operator
+
+// console.log(Math.min(...arrnum))//-1 as expected
+
+
+//concat two arrays
+// const a=[1,2];
+// const b=[1,2,3,4]
+// console.log(a.concat(b))
+
+// //using spread operator
+// console.log([...a,...b])
+
+//string to array
+// var x="hello"
+// var a=x.split('')
+
+// console.log(a)
+
+// var b=[...x]
+
+// console.log(b)
+
+//Copying nested array
+
+// let array1 = ['h', ['e', [1, true, 9], "hello"], ['y']];
+
+// // Copying array1 to array2 using spread operator
+// let array2 = [...array1];
+
+// // Printing array2 after copying
+// console.log("Array 2 after nested copying:\n", array2);
+
+// // Updating array1[0] from 'h' to 'a'
+// array1[0] = 'a'
+
+// // Printing array2 after updating array1[0]
+// console.log("Array 2 after updating array1[0] to 'a':\n", array2);
+
+// // Updating array1[1][0] from 'e' to 'b'
+// array1[1][0] = 'b'
+
+// // Printing array1 after updating array1[1][0]
+// console.log("Array 1 after updating array1[1][0] to 'b':\n", array1);
+
+// // Printing array2 after updating array1[1][0]
+// console.log("Array 2 after updating array1[1][0] to 'b':\n", array2);//changes reflected in array2 also
+
+
+//coupying array index wise
+// let array1 = ['h', ['e', [1, true, 9], "hello"], ['y']];
+
+// // Copying array1 to array2 using spread operator
+// let array2 = [...array1];
+
+// // Copying array1[1] nested array to array2[1] using spread operator
+// array2[1] = [...array1[1]]
+
+// // Copying array1[2] nested array to array2[2] using spread operator
+// array2[2] = [...array1[2]]
+
+// // Printing array2 after copying the data index wise
+// console.log("Array 2 after nested copying:\n", array2);
+
+// // Updating array1[0] from 'h' to 'a'
+// array1[0] = 'a'
+
+// // Printing array2 after updating array1[0]
+// console.log("Array 2 after updating array1[0] to 'a':\n", array2);
+
+// // Updating array1[1][0] from 'e' to 'b'
+// array1[1][0] = 'b'
+
+// // Printing array1 after updating array1[1][0]
+// console.log("Array 1 after updating array1[1][0] to 'b':\n", array1);
+
+// // Printing array2 after updating array1[1][0]
+// console.log("Array 2 after updating array1[1][0] to 'b':\n", array2);
+// //change is not reflected in array2
+
+
+
+//spread operator with objects
+// const obj1 = { x : 1, y : 2 };
+// const obj2 = { z : "hai" };
+
+// // add members obj1 and obj2  to obj3
+// const obj3 = {...obj1, ...obj2};
+
+// console.log(obj3); // {x: 1, y: 2, z: hai}
+
+
+//update nested Objects
+// const user = {
+//   name: "Alex",
+//   address: "15th Park Avenue",
+//   age: 43,
+//   department: {
+//     name: "Sales",
+//     Shift: "Morning",
+//     address: {
+//       city: "Bangalore",
+//       street: "7th Residency Rd",
+//       zip: 560001
+//     }
+//   }
+// };
+// const updated = {
+//   ...user,
+//   department: {
+//     ...user.department,
+//     address: {
+//       ...user.department.address,
+//       city: "Chennai"
+//     }
+//   }
+// };
+// console.log(updated);
+
+
+//merge two objects
+// const obj1={name:"Thaslima",Dept:"Frontend"};
+
+// const obj2={empId:"PS073"}
+
+// //merge two object into one object
+// const obj3={...obj1,...obj2};
+
+// console.log(obj3)
+
+
+// const empdetails1={name:"Thaslima",Dept:"Frontend"};
+
+// const empdetails2={name:"Banu",empId:"PS073"}
+
+// const employee={...empdetails1,...empdetails2}
+
+// console.log(employee)//result is {name:Banu,Dept:Frontend,empId:PS073}
+
+
+
+//Rest Parameter
+
+// const user={
+//     'name':"Thaslima",
+//     'email':"thaslibanuja058@gmail.com",
+//     'age':28
+// }
+
+// const {age,...rest}=user;//separating age and remaining values stored in rest
+// console.log(age,rest)
+
+//rest parameter in functions
+
+// function func(...args)//accepts any number of parameters passed
+// {
+//     let sum=0;
+//     for(let i of args)
+//     {
+//         sum+=i;
+//     }
+//     return sum;
+// }
+
+// console.log(func(3,4,5))
+// console.log(func(1,83,54))
+// console.log(func(3,47,27,74,82,56))
+
+//agruments mapping
+
+// function func(a,b,...args)
+// {
+//     console.log(a)
+//     console.log(b)
+//     console.log(args)
+// }
+
+// func(1,"two",2,"Four",5,6,"Seven")
+//1 will be mapped to a
+//"two" will be mapped to b
+//remaining parameters will be added to args array
+
+
+// function func(a,b,...args)
+// {
+//     console.log(a)
+//     console.log(b)
+//     console.log(args)//stored as an array
+// }
+
+// func("one",2,"Three")
+
+
+// function func(a,b,...args)
+// {
+//     console.log(a)
+//     console.log(b)
+//     console.log(args)//empty array []
+// }
+
+// func(1,"two")
+
+
+// function func(a,b,...args)
+// {
+//     console.log(a)
+//     console.log(b)//undefined
+//     console.log(args)//empty array []
+// }
+
+// func("one value")
+
+
+function func(a,...args)
+{
+    return args.map((e)=>a*e)
+}
+
+
+const result=func(2,5,6,7)
+
+console.log(result)
+// let x = 0xFF;
+// console.log(x)
+
+
+// var intNumber = 255;
+// var hexNumber = intNumber.toString(16);  // hex number as string
+
+// console.log(hexNumber);
