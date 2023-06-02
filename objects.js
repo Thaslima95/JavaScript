@@ -160,16 +160,16 @@ const obj2={
 // Adding a plus "+" sign before each code is enough.
 
 
-let codes1 = {
-  "+49": "Germany",
-  "+41": "Switzerland",
-  "+44": "Great Britain",
-  "+1": "USA"
-};
+// let codes1 = {
+//   "+49": "Germany",
+//   "+41": "Switzerland",
+//   "+44": "Great Britain",
+//   "+1": "USA"
+// };
 
-for (let code in codes1) {
-  console.log(+code ); // 49, 41, 44, 1
-}
+// for (let code in codes1) {
+//   console.log(+code ); // 49, 41, 44, 1
+// }
 
 // //Task 1
 // const user={}
@@ -231,3 +231,29 @@ for (let code in codes1) {
 // }
 // multiplyNumeric(menu)
 // console.log(menu)
+
+
+//object.entries,values,keys
+
+// let user = {
+//   name: "Thaslima",
+//   age: 28
+// };
+
+// console.log(Object.keys(user))
+// console.log(Object.values(user))
+// console.log(Object.entries(user))
+
+
+let prices = {
+  banana: 1,
+  orange: 2,
+  meat: 4,
+};
+
+//e[0]=>contains key=>banana,orange,meat
+//e[1]=>values=>1,2,4
+let double=Object.fromEntries(Object.entries(prices).map((e)=>[e[0],e[1]*2]))
+
+console.log(double)
+console.log(double.orange)
