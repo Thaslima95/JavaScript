@@ -123,18 +123,22 @@
 // }
 // PrintName.sayHi.apply(nameObj, [42]);
 
-const person1={
-    name:'Thaslima',
-    year:1995,
-    calAge(){
-        console.log(`${this.name} age is ${new Date().getFullYear()-this.year}`)
-    }
-}
+//bind()
+// const person1={
+//     name:'Thaslima',
+//     year:1995,
+//     calAge(){
+//         console.log(`${this.name} age is ${new Date().getFullYear()-this.year}`)
+//     }
+// }
 
-const person2={
-    name:'Nizamudeen',
-    year:1993,
-}
+// const person2={
+//     name:'Nizamudeen',
+//     year:1993,
+// }
 
-const getAge=person1.calAge.bind(person2)
-getAge();
+// const getAge=person1.calAge.bind(person2)
+// getAge();
+
+
+//

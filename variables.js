@@ -1,6 +1,7 @@
 //Describing var scope
 // var x=10;
 
+
 // function varScope()
 // {
 //  var x=2;
@@ -18,7 +19,8 @@
 
 // console.log("var(x value) after calling function "+x)  //print 10
 
-// let x=20
+// let x=20;
+
 
 // function letScope()
 // {
@@ -33,15 +35,24 @@
 // letScope()
 // console.log("outside function "+ x)
 
-const x = 2;
-function constScope() {
-  x = 3; // x is read only
-  //it will throw error TypeError
-  if (true) {
-    const x = 4;
-    console.log(x + " inside if block ");
-  }
-  console.log(x + "outside if block");
+// const x = 2;
+// function constScope() {
+//   // x = 3; // x is read only
+//   // //it will throw error TypeError
+//   if (true) {
+//      const x = 4;
+//     console.log(x + " inside if block ");
+//   }
+//   console.log(x + "outside if block");
+// }
+// console.log(x);
+// constScope();
+
+
+for (var i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 1);
 }
-console.log(x);
-constScope();
+
+// for (let i = 0; i < 3; i++) {
+//   setTimeout(() => console.log(i), 1);
+// }

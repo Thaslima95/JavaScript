@@ -245,15 +245,238 @@ const obj2={
 // console.log(Object.entries(user))
 
 
-let prices = {
-  banana: 1,
-  orange: 2,
-  meat: 4,
+// let prices = {
+//   banana: 1,
+//   orange: 2,
+//   meat: 4,
+// };
+
+// //e[0]=>contains key=>banana,orange,meat
+// //e[1]=>values=>1,2,4
+// let double=Object.fromEntries(Object.entries(prices).map((e)=>[e[0],e[1]*2]))
+
+// console.log(double)
+// console.log(double.orange)
+
+// //object references and copying
+// let user = { name: "Thaslima" };
+
+// let admin = user; // copy the reference
+
+
+// //if we try to change the value of name property of admin
+// //it will reflected in user object also
+// //because the reference is pointing to same address of the memory
+// // admin.name="Aafiya";
+
+// // console.log(user)//aafiya
+// // console.log(admin)//aafiya
+
+// //comparison of object
+
+// // let a={}
+// // let b=a;
+
+
+// // console.log(a===b)//true
+// // //bcx it points to same address
+
+
+// let a={}
+// let b={}
+
+// console.log(a===b)//false
+
+// //because these two objects pointing to different address
+
+
+
+//Cloning objects
+
+// let user = {
+//   name: "Aafiya",
+//   age: 1
+// };
+
+// let cloneUser = {}; // the new empty object
+
+// // let's copy all user properties into it
+// for (let key in user) {
+//   cloneUser[key] = user[key];
+// }
+
+// // now clone is a fully independent object with the same content
+// cloneUser.name = "Aafiya Thasnim"; // changed the data in it
+
+
+// console.log(cloneUser)
+// console.log( user.name ); // still Aafiya in the original object
+
+// console.log(user===cloneUser)//false
+
+
+//syntax
+//Object.assign(dest, ...sources)
+
+//The first argument dest is a target object.
+//Further arguments is a list of source objects.
+
+//It copies the properties of all source objects into the target dest, and then returns it as the result.
+
+
+
+// let user={name:"Aafiya"}
+
+// let activity1={walk:true}
+// let activity2={sleep:false}
+
+// //copying properties from activity1 and activity2 to user object
+// Object.assign(user,activity1,activity2)
+
+
+// // console.log(user)
+
+
+// //If the copied property  already exists, it gets overwritten:
+
+// // Object.assign(user,{sleep:true})
+
+// // console.log(user)
+
+
+// //object cloning using Object.assign
+
+// let user2=Object.assign({},user)
+
+// console.log(user2)//{ name: 'Aafiya', walk: true, sleep: false }
+
+
+
+//nested cloning
+
+let user = {
+  name: "Thaslima",
+  address: {
+   state:"Tamilnadu",
+   city:"Mannargudi",
+   pincode:{
+    zipcode:614001
+   }
+  }
 };
 
-//e[0]=>contains key=>banana,orange,meat
-//e[1]=>values=>1,2,4
-let double=Object.fromEntries(Object.entries(prices).map((e)=>[e[0],e[1]*2]))
+// let user5= Object.assign({},user)
 
-console.log(double)
-console.log(double.orange)
+let user5=structuredClone(user)
+
+user5.address.pincode.zipcode=614103
+
+console.log(user)
+
+console.log(user5)
+
+// console.log(user.address.city)
+
+// let user2Clone=Object.assign({},user)
+
+// console.log(user2Clone)
+
+// user2Clone.address.city="Podakkudi";
+
+// console.log(user)
+
+// console.log(user2Clone)
+//see the difference user object city also changed because due to shallow copy of nested objects.
+
+//To fix that and make user and clone truly separate objects, we should use a cloning loop that examines each value of user[key] and, 
+//if it’s an object, then replicate its structure as well. That is called a “deep cloning” or “structured cloning”. 
+
+//strcutured clone
+
+// let user3Clone=structuredClone(user)
+
+// user3Clone.address.state="TN";
+
+// console.log(user)
+
+// console.log(user3Clone)
+
+// console.log(user)//changes not reflected in user object
+
+
+
+
+//object destructuring
+
+// const employee = {    // Object we want to destructure
+//   firstname: 'Thaslima',
+//   lastname: 'Banu',
+//   dateofbirth: '1995'
+// };
+
+// Destructuring the object into our variables!!
+// const { firstname, lastname, dateofbirth } = employee;
+// console.log( firstname, lastname, dateofbirth);
+
+// console.log(`My name is ${firstname} ${lastname}`)
+
+//Aliases!!!
+
+// const { firstname: name, lastname: middlename, dateofbirth: dob } = employee;
+// console.log( name, middlename, dob);
+
+
+// const employee = {    // Object we want to destructure
+//   firstname: 'Thaslima',
+//   lastname: 'Banu',
+//   dateofbirth: '1995'
+// };
+
+
+// Destructuring the object into variables without!!
+// assigning default values
+// var { firstname, lastname, country } = employee;
+// console.log("Without setting default values")
+// console.log( firstname, lastname, country);
+
+// Destructuring the object into variables by
+// assigning default values!!
+// const {firstname,lastname,country = 'India' } = employee;
+// console.log("\n After setting default values")
+// console.log( firstname, lastname, country);
+
+
+//Nested Object destructuring!!
+
+// const user = {
+//   id: 1,
+//   name: "Leanne Graham",
+//   username: "Bret",
+//   email: "Sincere@april.biz",
+//   address: {
+//     street: "Kulas Light",
+//     city: "Gwenborough",
+//     zipcode: "92998-3874",
+//     geo: {
+//       lat: "-37.3159",
+//       lng: "81.1496"
+//     }
+//   },
+//   phone: "1-770-736-8031 x56442",
+//   website: "hildegard.org",
+//   company: {
+//     name: "Romaguera-Crona"
+//   }
+// };
+// const {address: {geo: { lng }}} = user;
+// console.log(lng);
+
+// const {address:{zipcode}}=user;
+// console.log(zipcode)
+
+// const {  address: { city } }  = user;
+// console.log(`City:${city}`);
+
+// let key = "name";
+// const { [key]: name } = user;
+// console.log(name);

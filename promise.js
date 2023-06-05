@@ -1,8 +1,8 @@
 //promise
-let completed=true;
+let completed=false;
 const newPromise=new Promise((resolve,reject)=>{
     setTimeout(()=>{
-        if(true)
+        if(completed)
         {
             resolve("I have completed the javascript course")
         }
