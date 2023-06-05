@@ -354,26 +354,26 @@ const obj2={
 
 //nested cloning
 
-let user = {
-  name: "Thaslima",
-  address: {
-   state:"Tamilnadu",
-   city:"Mannargudi",
-   pincode:{
-    zipcode:614001
-   }
-  }
-};
+// let user = {
+//   name: "Thaslima",
+//   address: {
+//    state:"Tamilnadu",
+//    city:"Mannargudi",
+//    pincode:{
+//     zipcode:614001
+//    }
+//   }
+// };
 
-// let user5= Object.assign({},user)
+// // let user5= Object.assign({},user)
 
-let user5=structuredClone(user)
+// let user5=structuredClone(user)
 
-user5.address.pincode.zipcode=614103
+// user5.address.pincode.zipcode=614103
 
-console.log(user)
+// console.log(user)
 
-console.log(user5)
+// console.log(user5)
 
 // console.log(user.address.city)
 
@@ -477,6 +477,69 @@ console.log(user5)
 // const {  address: { city } }  = user;
 // console.log(`City:${city}`);
 
-// let key = "name";
-// const { [key]: name } = user;
-// console.log(name);
+
+
+//Destructure to function parameter!!
+
+// const user = {
+//   'name': 'Thaslima',
+//   'email': 'thaslibanujas17@gmail.com',
+//   'age': 28
+// }
+// //here destructure the name and email properties of user object
+// const getDetails=({name,email})=>{
+//   console.log(`My name is ${name} and my email id is ${email}`)
+// }
+// getDetails(user);
+
+
+
+//Destructure function return value!!
+
+// const getUser=()=>{
+//   return{
+//     'name':"Thaslima",
+//     'email':"thaslibanujas17@gmail.com",
+//     'age':28
+//   }
+// }
+// const {name,email}=getUser();
+
+// console.log(name,email);
+
+
+//Destructure in Loops!!
+
+// const users = [
+//   {
+//     name: "Thaslima",
+//     address: "15th Park Avenue",
+//     age: 30
+//   },
+//   {
+//     name: "Aafiya",
+//     address: "Canada",
+//     age: 1
+//   },
+//   {
+//     name: "Nizam",
+//     address: "Bangalore",
+//     age: 28
+//   }
+// ];
+// for (let { name, age } of users) {
+//   console.log(`My name is ${name} and age is ${age}`);
+// }
+
+//destructure with rest(...)
+let user={
+  name:"Thaslima",
+  age:28,
+  place:"mannai"
+}
+
+const {name,...details}=user;
+
+console.log(name);
+console.log(details)
+
