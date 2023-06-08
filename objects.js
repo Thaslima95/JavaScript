@@ -350,6 +350,25 @@ const obj2={
 
 // console.log(user2)//{ name: 'Aafiya', walk: true, sleep: false }
 
+//spread syntax
+//we can copy an one object to another object without same reference using ...spread syntax
+let user1={
+  name:"Thaslima",
+  place:"Mannargudi"
+}
+
+let user2={...user1}
+
+console.log(user2)
+user2.place="Mannai"
+
+console.log(user2)
+
+console.log(user1)//changes will not reflected in user1 object
+
+
+
+
 
 
 //nested cloning
@@ -532,14 +551,14 @@ const obj2={
 // }
 
 //destructure with rest(...)
-let user={
-  name:"Thaslima",
-  age:28,
-  place:"mannai"
-}
+// let user={
+//   name:"Thaslima",
+//   age:28,
+//   place:"mannai"
+// }
 
-const {name,...details}=user;
+// const {name,...details}=user;
 
-console.log(name);
-console.log(details)
+// console.log(name);
+// console.log(details)
 

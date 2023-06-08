@@ -25,6 +25,17 @@
 // const p2 = new Promise((resolve) => setTimeout(resolve, 500, 'shipper rejects the order'));
 // const p3 = new Promise((resolve) => setTimeout(resolve, 200, 'delivery date confirmed'));
 
+const p1=new Promise((resolve,reject)=>{
+    if(true)
+    {
+        console.log("promise resolved")
+    }
+    else{
+        console.log("Promise rejected")
+    }
+})
+p1.then((messgae)=>console.log(messgae))
+
 // //promise will return the result at higher value of timeout
 // async function parallel()
 // {
@@ -219,24 +230,24 @@
 
 //async await with reject promise
 
-const getProfile=new Promise((resolve,reject)=>{
-    resolve("Profile")
-})
-// console.log(getProfile)
+// const getProfile=new Promise((resolve,reject)=>{
+//     resolve("Profile")
+// })
+// // console.log(getProfile)
 
-const getfreidnsofProfile=new Promise((resolve,reject)=>{
-    reject("No list of friends")
-})
+// const getfreidnsofProfile=new Promise((resolve,reject)=>{
+//     reject("No list of friends")
+// })
 
-const getfemalefriendsofProfile=new Promise((resolve,reject)=>{
-    resolve("List of Female freinds of profile")
-})
+// const getfemalefriendsofProfile=new Promise((resolve,reject)=>{
+//     resolve("List of Female freinds of profile")
+// })
 
 
- async function getFemaleFreind(){
-    const profile=await getProfile;
-    const getfreidsProfile=await getfreidnsofProfile;
-    const getFemaleFreinds= await getfemalefriendsofProfile;
-    return getFemaleFreinds;
-}
-getFemaleFreind().then((femalefriends)=>console.log(femalefriends)).catch((error)=>console.log(error))
+//  async function getFemaleFreind(){
+//     const profile=await getProfile;
+//     const getfreidsProfile=await getfreidnsofProfile;
+//     const getFemaleFreinds= await getfemalefriendsofProfile;
+//     return getFemaleFreinds;
+// }
+// getFemaleFreind().then((femalefriends)=>console.log(femalefriends)).catch((error)=>console.log(error))
