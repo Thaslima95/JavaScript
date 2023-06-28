@@ -2,12 +2,19 @@
 //non primitive data type
 //key value pair
 
-const obj1=new Object({name:"Thaslima",age:28});
+const obj1=new Object({name:"Thaslima BAnu",age:28});
 
 const obj2={
     name:"Thaslima",
     age:28
 };
+
+let arr1=[]
+arr1.push(obj2)
+arr1.push(obj1)
+console.log(arr1)
+arr1.pop()
+console.log(arr1)
 
 // //accessing object using dot notation
 // console.log(obj1.name)

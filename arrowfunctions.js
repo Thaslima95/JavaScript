@@ -31,26 +31,26 @@
 // console.log(result1); 
 
 //this keyword in normal function
-// function Person() {
-//     this.name = 'Janiel',
-//     this.age = 25,
-//     this.sayName = function () {
+function Person() {
+    this.name = 'Janiel',
+    this.age = 25,
+    this.sayName = function () {
 
-//         // this is accessible
-//         console.log(this.age);//25
+        // this is accessible
+        console.log(this.age);//25
 
-//         function innerFunc() {
+        function innerFunc() {
 
-//             // this refers to the global object
-//             console.log(this.age);//undefined
-//             console.log(this);//refers window in browser
+            // this refers to the global object
+            console.log(this.age);//undefined
+            console.log(this);//refers window in browser
             
-//         }
-//         innerFunc();
-//     }
-// }
-// let x = new Person();
-// x.sayName();
+        }
+        innerFunc();
+    }
+}
+let x = new Person();
+x.sayName();
 
 
 
@@ -107,5 +107,5 @@
 // person.sayName(); // undefined
 
 
-let Bar = () => {};
-let bar = new Bar(); // TypeError: Bar is not a constructor
+// let Bar = () => {};
+// let bar = new Bar(); // TypeError: Bar is not a constructor
