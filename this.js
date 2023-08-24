@@ -110,35 +110,35 @@
 // PrintName.sayHi.call(nameObj, 42);//this refers to namObj
 
 
-//apply() similar to call() except arguments passed as an array
+// apply() similar to call() except arguments passed as an array
 // let nameObj = {
 //     name: "Tony"
 // }
   
 // let PrintName = {
 //     name: "steve",
-//     sayHi: function (...age) {
+//     sayHi: function (age) {
 //         console.log(this.name + " age is " + age);
 //     }
 // }
-// PrintName.sayHi.apply(nameObj, [42]);
+// PrintName.sayHi.apply(nameObj, 42);
 
 //bind()
-// const person1={
-//     name:'Thaslima',
-//     year:1995,
-//     calAge(){
-//         console.log(`${this.name} age is ${new Date().getFullYear()-this.year}`)
-//     }
-// }
+const person1={
+    name:'Thaslima',
+    year:1995,
+    calAge(){
+        console.log(`${name} age is ${new Date().getFullYear()-year}`)
+    }
+}
 
-// const person2={
-//     name:'Nizamudeen',
-//     year:1993,
-// }
+const person2={
+    name:'Nizamudeen',
+    year:1993,
+}
 
-// const getAge=person1.calAge.bind(person2)
-// getAge();
+const getAge=person1.calAge.bind(person2)
+getAge();
 
 
 //

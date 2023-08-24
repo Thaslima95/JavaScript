@@ -6,7 +6,7 @@ console.time();
   // Count occurrences of A in each text
   for (let i = 0; i < M; i++) {
     const text = texts[i];
-    const count = ((text.match(pattern)) || []).length;
+    const count = ((text.match(pattern))|| []).length;
     wordmap.set(count, text);
   }
  //another way using sort method
@@ -45,7 +45,7 @@ const A = "java";
 const inputs = [
       "I hate java",
       "Python is a good programming language",
-      "Java java "
+      "java java "
 ];
 
 sortText(M, A, inputs);
